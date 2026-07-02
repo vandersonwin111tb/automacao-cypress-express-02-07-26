@@ -1,4 +1,7 @@
 {
   "name": "cypress-express-mark",
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0",
+  "devDependencies": {
+    "cypress": "^15.18.0"
+  }
 }
