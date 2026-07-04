@@ -3,10 +3,12 @@
 describe('tasks', () => {
     it('deve cadastrar uma nova tarefa', () => {
 
+        var taskName = 'Ler um livro de Node.js'
+
         cy.request({
             url: 'http://localhost:3333/helper/tasks',
             method: 'DELETE',
-            body: { name: 'Ler um livro de node.js' }
+            body: { name: taskName }
         }).then(response => {
             expect(response.status).to.eq(204)
         })
@@ -14,7 +16,7 @@ describe('tasks', () => {
         cy.visit('http://localhost:3000')
 
         cy.get('input[placeholder="Add a new Task"]')
-            .type('Ler um livro de node.js')
+            .type(taskName)
 
         cy.contains('button', 'Create').click()
 
@@ -22,17 +24,22 @@ describe('tasks', () => {
         //     .should('be.visible')
         //     .should('have.text', 'Ler um livro de node.js')
 
-        cy.contains('main div p', 'Ler um livro de node.js')
+        cy.contains('main div p', taskName)
             .should('be.visible')
 
     })
 
-    it('Não deve permitir tarefa duplicada', ()=> {
+    it('Não deve permitir tarefa duplicada', () => {
+
+        const task = {
+            name: 'Estudar Javascript',
+            is_done: false
+        }
 
         cy.request({
             url: 'http://localhost:3333/helper/tasks',
             method: 'DELETE',
-            body: { name: 'Estudar Javascript'}
+            body: { name: task.name }
         }).then(response => {
             expect(response.status).to.eq(204)
         })
@@ -41,7 +48,7 @@ describe('tasks', () => {
         cy.request({
             url: 'http://localhost:3333/tasks',
             method: 'POST',
-            body: { name: 'Estudar Javascript', is_done: false }
+            body: task
         }).then(response => {
             expect(response.status).to.eq(201)
         })
@@ -49,7 +56,7 @@ describe('tasks', () => {
         cy.visit('http://localhost:3000')
 
         cy.get('input[placeholder="Add a new Task"]')
-            .type('Estudar Javascript')
+            .type(task.name)
 
         cy.contains('button', 'Create').click()
 
