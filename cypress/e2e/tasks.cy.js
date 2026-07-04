@@ -23,7 +23,7 @@ describe('tasks', () => {
             //     .should('be.visible')
             //     .should('have.text', 'Ler um livro de node.js')
 
-            cy.contains('main div p', taskName)
+            cy.contains('main div p', 'simulando um bug')
                 .should('be.visible')
 
         })
