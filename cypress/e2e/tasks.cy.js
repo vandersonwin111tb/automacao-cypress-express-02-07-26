@@ -18,5 +18,12 @@ describe('tasks', () => {
 
         cy.contains('button', 'Create').click()
 
+        // cy.get('main div p')
+        //     .should('be.visible')
+        //     .should('have.text', 'Ler um livro de node.js')
+
+        cy.contains('main div p', 'Ler um livro de node.js')
+            .should('be.visible')
+
     })
 })
