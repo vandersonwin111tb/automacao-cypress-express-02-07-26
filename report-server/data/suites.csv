@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1023","Não deve permitir tarefa duplicada","tasks","2026-07-04","passed","2026-07-04","","cadastro","",""
+"","937","deve cadastrar uma nova tarefa","tasks","2026-07-04","passed","2026-07-04","","cadastro","",""
+"","181","Campo obrigatório","tasks","2026-07-04","passed","2026-07-04","","cadastro","",""
+"","224","Deve remover uma tarefa","tasks","2026-07-04","passed","2026-07-04","","exclusão","",""
+"","610","passes","","2026-07-04","passed","2026-07-04","","webapp deve estar online","",""
+"","190","Deve concluir uma tarefa","tasks","2026-07-04","passed","2026-07-04","","atualização","",""

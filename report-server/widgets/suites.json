@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"d56a2b87e67b523f9db62a8f9817b840","name":"tasks","statistic":{"failed":0,"broken":0,"skipped":0,"passed":5,"unknown":0,"total":5}},{"uid":"32e3c20cc78e38150f01469787a12912","name":"webapp deve estar online","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
