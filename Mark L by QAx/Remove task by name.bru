@@ -5,9 +5,15 @@ meta {
 }
 
 delete {
-  url: http://localhost:3333/tasks/78ed5f88-a00d-4519-a108-bb3b70669b2b
-  body: none
+  url: http://localhost:3333/helper/tasks
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "name": "Ler um livro de node.js"
+  }
 }
 
 settings {
