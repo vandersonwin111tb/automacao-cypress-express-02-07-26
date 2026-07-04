@@ -1,0 +1,16 @@
+meta {
+  name: Remove task by name
+  type: http
+  seq: 6
+}
+
+delete {
+  url: http://localhost:3333/tasks/78ed5f88-a00d-4519-a108-bb3b70669b2b
+  body: none
+  auth: none
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Update task
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:3333/tasks/8b161cff-5485-4a06-aaa3-5cde44d34es
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"is_done": false
+  }
+}
+
+settings {
+  encodeUrl: true
+}
