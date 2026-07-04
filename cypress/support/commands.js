@@ -26,13 +26,27 @@
 
 // Cypress.Commands.add('')
 
-Cypress.Commands.add('createTask', (taskName) => {
+Cypress.Commands.add('createTask', (taskName = '') => {
     cy.visit('http://localhost:3000')
 
-    cy.get('input[placeholder="Add a new Task"]')
-        .type(taskName)
+    cy.get('input[placeholder="Add a new Task"]').as('inputTask')
+
+    if (taskName !== '') {
+        cy.get('@inputTask')
+            .type(taskName)
+    }
 
     cy.contains('button', 'Create').click()
+})
+
+Cypress.Commands.add('isRequired', (targeMessage) => {
+    cy.get('@inputTask')
+        .invoke('prop', 'validationMessage')
+        .should((text) => {
+            expect(
+                targeMessage
+            ).to.eq(text)
+        })
 })
 
 Cypress.Commands.add('removeTaskByName', (taskName) => {
@@ -45,7 +59,7 @@ Cypress.Commands.add('removeTaskByName', (taskName) => {
     })
 })
 
-Cypress.Commands.add('postTask', (task)=>{
+Cypress.Commands.add('postTask', (task) => {
     cy.request({
         url: 'http://localhost:3333/tasks',
         method: 'POST',
